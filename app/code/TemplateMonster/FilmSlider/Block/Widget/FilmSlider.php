@@ -25,11 +25,14 @@ class FilmSlider extends Template implements \Magento\Widget\Block\BlockInterfac
 	 * 2018-11-23 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
 	 * "Achieve a 85+ «Optimization» score for Magento 2 in Google PageSpeed Insights"
 	 * https://www.upwork.com/ab/f/contracts/21050098
+	 * 2020-01-17
+	 * "«Call to undefined function TemplateMonster/FilmSlider/Block/Widget/df_media_url()»":
+	 * https://github.com/frugue/site/issues/4
 	 * @param string $f  An image's path relative to the `pub/media` folder
 	 * @param int|null $w
 	 * @return string
 	 */
-    function addUrl($f, $w = null) {return $w ? df_img_resize($f, $w) : df_media_url($f);}
+    function addUrl($f, $w = null) {return $w ? df_img_resize($f, $w) : df_media_path2url($f);}
 
     public function includeAttr($name, $value)
     {
