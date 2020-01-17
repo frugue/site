@@ -6,6 +6,7 @@
 !*/
 !/.gitignore
 !/composer.json
+!/README.md
 !app/code/**/*
 !app/design/frontend/TemplateMonster/**/*
 app/design/frontend/TemplateMonster/theme007/web/css/source/.sass-cache
