@@ -11,19 +11,20 @@
         "sort-packages": true
     },
     "require": {
-        "magento/product-community-edition": "2.3.0",
-        "imaginaerum/magento2-language-fr-fr": "*",
+        "amasty/ajax-scroll": "*",
+        "amasty/shopby": "*",
+        "amasty/xsearch": "1.11.2",
         "frugue/configurable": "*",
         "frugue/core": "*",
+        "frugue/ru": "*",
         "frugue/shipping": "*",
         "frugue/store": "*",
-        "magepal/magento2-gmailsmtpapp": "*",
-        "splendidinternet/mage2-locale-de-de": "*",
-        "mageplaza/module-core": "^1.3",
-        "amasty/xsearch": "1.11.2",
-        "amasty/shopby": "*",
+        "imaginaerum/magento2-language-fr-fr": "*",
         "magefan/module-conflict-detector": "*",
-        "amasty/ajax-scroll": "*"
+        "magento/product-community-edition": "2.3.0",
+        "magepal/magento2-gmailsmtpapp": "*",
+        "mageplaza/module-core": "^1.3",
+        "splendidinternet/mage2-locale-de-de": "*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "~2.13.0",
