@@ -1,0 +1,31 @@
+# 2020-01-17 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+# http://stackoverflow.com/questions/987142
+# http://stackoverflow.com/questions/9162919
+# http://stackoverflow.com/questions/8024924#comment15884195_8025106
+*
+!*/
+!/.gitignore
+!/composer.json
+!app/code/**/*
+!app/design/frontend/TemplateMonster/**/*
+app/design/frontend/TemplateMonster/theme007/web/css/source/.sass-cache
+app/design/frontend/TemplateMonster/theme007/web/css/source/web
+!app/etc/config.php
+!lib/web/jquery/jquery.ba-hashchange.min.js
+!lib/web/tiny_mce
+!lib/web/varien/form.js
+!pub/phpinfo.php
+!vendor/magento/framework/View/Element/Template/File/Validator.php
+!vendor/magento/module-catalog/Model/View/Asset/Image.php
+!vendor/magento/module-checkout/view/frontend/web/js/view/progress-bar.js
+!vendor/magento/module-configurable-product/Model/Product/Type/Configurable.php
+!vendor/magento/module-configurable-product/Plugin/Model/ResourceModel/Attribute/InStockOptionSelectBuilder.php
+!vendor/magento/module-configurable-product/view/base/templates/product/price/final_price.phtml
+!vendor/magento/module-swatches/view/frontend/templates/product/listing/renderer.phtml
+/update/
+dev
+vendor/codeception
+vendor/magento/framework/Test
+vendor/magento/magento2-base
+vendor/magento/magento2-functional-testing-framework
+vendor/tubalmartin

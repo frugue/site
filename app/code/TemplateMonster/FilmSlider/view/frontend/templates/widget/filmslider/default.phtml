@@ -1,0 +1,93 @@
+<?php
+use Magento\Framework\DataObject as _DO;
+use TemplateMonster\FilmSlider\Block\Widget\FilmSlider as B;
+use TemplateMonster\FilmSlider\Model\ResourceModel\SliderItem\Collection as Items;
+use TemplateMonster\FilmSlider\Model\Slider;
+use TemplateMonster\FilmSlider\Model\SliderItem as Item;
+/** @var B $block */
+$b = $block; /** @var B $b */
+$slider = $b->createSlider(); /** @var Slider $slider */
+$items = $slider->getSlideCollection(); /** @var Items $items */
+$loader = $this->loaderDimensions($pS = $slider->getParams()); /** @var string $pS */
+$p = df_json_decode($pS); /** @var array(string => mixed) $p */
+?>
+<div class="slider-pro-wrapper">
+    <div class="slider-pro-container" style="padding-bottom: <?= $loader['padding'] ?>%; height: <?= $loader['height'] ?>px;">
+        <div class="loading-mask for-slider">
+            <div class="loader">
+                <img src="<?php /* @escapeNotVerified */ echo $this->getViewFileUrl("TemplateMonster_FilmSlider::images/loader-2.gif"); ?>"
+                     alt="<?php /* @escapeNotVerified */ echo __('Loading...'); ?>">
+            </div>
+        </div>
+        <div id="example1" class="slider-pro <?= $loader['position']; ?>" data-mage-init='{"FilmSlider": <?= $slider->getParams(); ?>}'>
+            <div class="sp-slides">
+                <?php foreach($items as $item) { /** @var Item $item */
+					/**
+					 * 2018-11-23 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+					 * "Achieve a 85+ «Optimization» score for Magento 2 in Google PageSpeed Insights"
+					 * https://www.upwork.com/ab/f/contracts/21050098
+					 * A string like «wysiwyg/slider_lingerie_1.jpg».
+					 * @var string $image
+					 */
+                	$img = $item->getImage();
+                ?>
+                    <div class="sp-slide">
+<!-- 2018-11-23 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+"Achieve a 85+ «Optimization» score for Magento 2 in Google PageSpeed Insights"
+https://www.upwork.com/ab/f/contracts/21050098
+https://github.com/bqworks/slider-pro/blob/1.2.2/docs/modules.md#6-conditional-images -->
+                        <img
+							class="sp-image"
+							data-large="<?= $b->addUrl($img, dfa($p, 'largeSize')) ?>"
+							data-medium="<?= $b->addUrl($img, dfa($p, 'mediumSize')) ?>"
+							data-small="<?= $b->addUrl($img, dfa($p, 'smallSize')) ?>"
+							data-src="<?= $b->addUrl($img) ?>"
+						/>
+                        <?php foreach($item->getLayerItems() as $layer): /** @var _DO $layer */?>
+                            <div class="sp-layer <?= $layer->getData('css-class'); ?>"
+                                <?= $this->includeAttr('data-width',           $layer->getData('data-width') ); ?>
+                                <?= $this->includeAttr('data-height',          $layer->getData('data-height') ); ?>
+                                <?= $this->includeAttr('data-depth',           $layer->getData('data-depth') ); ?>
+                                <?= $this->includeAttr('data-position',        $layer->getData('data-position') ); ?>
+                                <?= $this->includeAttr('data-horizontal',      $layer->getData('data-horizontal') ); ?>
+                                <?= $this->includeAttr('data-vertical',        $layer->getData('data-vertical') ); ?>
+                                <?= $this->includeAttr('data-show-transition', $layer->getData('data-show-transition') ); ?>
+                                <?= $this->includeAttr('data-hide-transition', $layer->getData('data-hide-transition') ); ?>
+                                <?= $this->includeAttr('data-show-delay',      $layer->getData('data-show-delay') ); ?>
+                                <?= $this->includeAttr('data-hide-delay',      $layer->getData('data-hide-delay') ); ?>
+                                <?= $this->includeAttr('data-show-duration',   $layer->getData('data-show-duration') ); ?>
+                                <?= $this->includeAttr('data-hide-duration',   $layer->getData('data-hide-duration') ); ?>
+                                <?= $this->includeAttr('data-show-offset',     $layer->getData('data-show-offset') ); ?>
+                                <?= $this->includeAttr('data-hide-offset',     $layer->getData('data-hide-offset') ); ?>
+                                <?= $this->includeAttr('data-stay-duration',   $layer->getData('data-stay-duration') ); ?> >
+        
+                                <?php if ($layer->getData('layer_images')) { ?>
+                                    <img data-src="<?= $b->addUrl($layer->getLayerImages());?>">
+                                <?php } ?>
+                                <?php if ($layer->getData('layer_text_html')) { ?>
+                                    <div style="<?= $layer->getData('layer_text_width')       ? ('width: ' . $layer->getData('layer_text_width') . 'px;') : '' ?>
+                                    <?= $layer->getData('layer_text_height')      ? ('height: ' . $layer->getData('layer_text_height') . 'px;') : '' ?>
+                                    <?= $this->setBackground($layer->getData('layer_text_back_color'), $layer->getData('layer_text_back_opacity')); ?>
+                                    <?= $layer->getData('layer_text_color')       ? ('color: ' . $layer->getData('layer_text_color') . ';') : '' ?>
+                                    <?= $layer->getData('layer_text_font_family') ? ('font-family: ' . $layer->getData('layer_text_font_family') . ';') : '' ?>
+                                    <?= $layer->getData('layer_text_font_size')   ? ('font-size: ' . $layer->getData('layer_text_font_size') . 'px;') : '' ?>
+                                    <?= $layer->getData('layer_text_line_height') ? ('line-height: ' . $layer->getData('layer_text_line_height') . 'px;') : '' ?>
+                                    <?= $layer->getData('layer_text_font_style')  ? ('font-style: ' . $layer->getData('layer_text_font_style') . ';') : '' ?>
+                                    <?= $layer->getData('layer_text_font_weight') ? ('font-weight: ' . $layer->getData('layer_text_font_weight') . ';') : '' ?>
+                                    <?= $layer->getData('layer_text_indent')      ? ('padding: ' . $layer->getData('layer_text_indent') . 'px;') : '' ?>
+                                        ">
+<!-- 2018-10-04 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+«Setup individual per-store captions for home page banners»:
+https://github.com/frugue/core/issues/13 -->
+<?= __(df_string_clean(df_trim($layer->getData('layer_text_html')), "\r", "\n")) ?>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <?php ?>
+                        <?php endforeach; ?>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>

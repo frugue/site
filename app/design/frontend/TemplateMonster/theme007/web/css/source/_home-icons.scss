@@ -1,0 +1,40 @@
+@font-face {
+	font-family: 'Linearicons';
+	src: url('../fonts/linearicons/Linearicons.ttf') format('truetype');
+	//src: url('https://d2auqbse5oji4p.cloudfront.net/Linearicons.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	/*src: url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.eot);
+	src:
+		url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.eot?#iefix) format('embedded-opentype')
+		,url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.woff2) format('woff2')
+		,url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.ttf) format('truetype')
+		,url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.woff) format('woff')
+		,url(https://cdn.linearicons.com/free/1.0.0/Linearicons-Free.svg#Linearicons-Free) format('svg')
+	; */
+	font-display: swap;
+}
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'Linearicons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Enable Ligatures ================ */
+	-webkit-font-feature-settings: "liga";
+	-moz-font-feature-settings: "liga=1";
+	-moz-font-feature-settings: "liga";
+	-ms-font-feature-settings: "liga" 1;
+	-o-font-feature-settings: "liga";
+	font-feature-settings: "liga";
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.icon-truck:before {
+	content: "\e857";
+}

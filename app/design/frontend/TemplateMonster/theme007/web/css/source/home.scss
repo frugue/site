@@ -1,0 +1,164 @@
+@charset 'UTF-8';
+$frugue_full: false;
+
+// 2018-11-24 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+// "Achieve a 85+ «Optimization» score for Magento 2 in Google PageSpeed Insights"
+// https://www.upwork.com/ab/f/contracts/21050098
+// grid.scss
+@import '_normalize';
+@import '_variables';
+@import '_mixins';
+
+.container {
+    @include make-container($gutter-width);
+    min-width: $container-xs;
+    max-width: $screen-xs-min;
+
+    @media (min-width: $screen-sm-min) {
+        max-width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+        max-width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+        max-width: $container-lg;
+    }
+    @media (min-width: $screen-xl-min) {
+        @include make-container($gutter-width-xl);
+        max-width: $container-xl;
+    }
+}
+
+.container-fluid {
+    @include make-container($gutter-width);
+    @media (min-width: $screen-xl-min) {
+        @include make-container($gutter-width-xl);
+    }
+}
+
+.row {
+    @include make-row($gutter-width);
+    @media (min-width: $screen-xl-min) {
+        @include make-row($gutter-width-xl);
+    }
+}
+
+[class*='col-'] {
+    @include make-col($gutter-width);
+    @media (min-width: $screen-xl-min) {
+        @include make-col($gutter-width-xl);
+    }
+}
+
+html.lt-ie10 * + [class*='col-'],
+html.lt-ie10 * + .row,
+* + [class*='col-'],
+* + .row {
+    margin-top: $row-ws;
+}
+
+html.lt-ie10 .row-no-gutter, .row-no-gutter {
+    margin-left: 0;
+    margin-right: 0;
+
+    > [class*='col'] {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    > * + [class*='col'] {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: $screen-xs-min) {
+    * + [class*='col-xs-'] {
+        margin-top: 0;
+    }
+
+    .row {
+        @include make-flex();
+        @include flex(0 1 auto);
+        @include flex-direction(row);
+        @include flex-wrap(wrap);
+    }
+
+    .row > [class*='col'] {
+        @include flex(0 0 auto);
+        @include flex-basis(100%);
+    }
+
+    @include make-grid-system("xs");
+}
+
+@media (min-width: $screen-sm-min) {
+    * + [class*='col-sm-'] {
+        margin-top: 0;
+    }
+
+    @include make-grid-system("sm");
+}
+
+@media (min-width: $screen-md-min) {
+    * + [class*='col-md-'] {
+        margin-top: 0;
+    }
+
+    @include make-grid-system("md");
+}
+
+@media (min-width: $screen-lg-min) {
+    * + [class*='col-lg-'] {
+        margin-top: 0;
+    }
+
+    @include make-grid-system("lg");
+}
+
+html.lt-ie10 {
+    .row > {
+        @include make-fallback($column-count);
+    }
+}
+
+@import '_home-icons';
+
+// 2018-11-24 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+// "Achieve a 85+ «Optimization» score for Magento 2 in Google PageSpeed Insights"
+// https://www.upwork.com/ab/f/contracts/21050098
+// modules.scss
+@import 'helpers/_animate.scss';
+@import 'helpers/_floating.scss';
+@import 'helpers/_text-alignment.scss';
+@import 'helpers/_text-styling.scss';
+@import 'helpers/_typography.scss';
+
+@import '../../../Magento_Theme/web/css/source/_module.scss';
+@import '../../../Magento_Customer/web/css/source/_module.scss';
+@import '../../../Magento_Search/web/css/source/_module.scss';
+@import '../../../Magento_Checkout/web/css/source/module/_minicart';
+@import '../../../Magento_Newsletter/web/css/source/_module.scss';
+@import '../../../Magento_CatalogSearch/web/css/source/_module.scss';
+
+@import '../../../TemplateMonster_Megamenu/web/css/source/_module.scss';
+@import '../../../TemplateMonster_FilmSlider/web/css/source/_module.scss';
+
+// 2018-11-24 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+// "Achieve a 85+ «Optimization» score for Magento 2 in Google PageSpeed Insights"
+// https://www.upwork.com/ab/f/contracts/21050098
+// style.scss
+
+@import 'components/_fonts';
+@import 'components/_forms';
+@import 'components/_rd-navbar';
+@import 'helpers/_text-alignment';
+@import 'helpers/_text-styling';
+@import 'helpers/_icons';
+@import 'helpers/_typography';
+
+@import '_theme-options';
+// 2018-11-28 Dmitry Fedyuk https://www.upwork.com/fl/mage2pro
+// "Achieve a 85+ «Optimization» score for Magento 2 in Google PageSpeed Insights"
+// https://www.upwork.com/ab/f/contracts/21050098
+@import '_theme-options-dynamic';
+@import '_flags';

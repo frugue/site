@@ -1,0 +1,26 @@
+{
+    "name": "mageplaza/module-abandoned-cart-email",
+    "description": "Abandoned cart email for Magento 2",
+    "require": {
+        "mageplaza/module-core": "*"
+    },
+    "type": "magento2-module",
+    "version": "1.1.2",
+    "license": "Mageplaza License",
+    "authors": [
+        {
+          "name": "Hi",
+          "email": "hi@mageplaza.com",
+          "homepage": "https://www.mageplaza.com",
+          "role": "Leader"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Mageplaza\\AbandonedCart\\": ""
+        }
+    }
+}
