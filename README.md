@@ -25,6 +25,6 @@ bin/magento setup:static-content:deploy \
 bin/magento setup:static-content:deploy \
 	--area frontend \
 	--theme TemplateMonster/theme007 \
-	-f en_US de_DE fr_FR
+	-f en_US de_DE fr_FR ru_RU
 bin/magento maintenance:disable
 ```
