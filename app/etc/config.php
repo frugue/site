@@ -47,6 +47,7 @@ return [
         'Df_Theme' => 1,
         'Df_Typography' => 1,
         'Df_Ui' => 1,
+        'Df_UrlRewrite' => 1,
         'Magento_User' => 1,
         'Magento_Security' => 1,
         'Magento_Wishlist' => 1,
