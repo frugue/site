@@ -4,15 +4,17 @@
 ```
 bin/magento maintenance:enable
 composer remove frugue/configurable
-composer remove frugue/core 
+composer remove frugue/core  
+composer remove frugue/ru
 composer remove frugue/shipping  
 composer remove frugue/store
 rm -rf composer.lock
 composer clear-cache
-composer require frugue/configurable
-composer require frugue/core 
-composer require frugue/shipping  
-composer require frugue/store
+composer require frugue/configurable:*
+composer require frugue/core:*
+composer require frugue/ru:* 
+composer require frugue/shipping:*  
+composer require frugue/store:*
 bin/magento setup:upgrade
 bin/magento cache:enable
 rm -rf var/di var/generation generated/code
