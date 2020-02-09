@@ -1,7 +1,10 @@
 [frugue.com](https://frugue.com) (Magento 2).
 
 ## How to update all `frugue/*` packages 
-```
+```              
+sudo service cron stop     
+sudo service nginx stop      
+sudo service php7.2-fpm stop 
 bin/magento maintenance:enable
 composer remove frugue/configurable
 composer remove frugue/core  
@@ -28,5 +31,8 @@ bin/magento setup:static-content:deploy \
 	--area frontend \
 	--theme TemplateMonster/theme007 \
 	-f en_US de_DE fr_FR ru_RU
-bin/magento maintenance:disable
+bin/magento maintenance:disable 
+sudo service php7.2-fpm start
+sudo service nginx start
+sudo service cron start
 ```
