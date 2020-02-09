@@ -11,8 +11,13 @@
         "sort-packages": true
     },
     "require": {
-        "amasty/ajax-scroll": "*",
-        "amasty/shopby": "*",
+        "amasty/ajax-scroll": "1.1.18",
+        "amasty/base": "1.7.2",
+        "amasty/module-improved-layered-navigation-page": "2.6.0",
+        "amasty/module-shop-by-base": "2.12.1",
+        "amasty/module-shop-by-brand": "2.8.1",
+        "amasty/shopby": "2.12.5",
+        "amasty/shopby-seo": "2.10.0",
         "amasty/xsearch": "1.11.2",
         "frugue/configurable": "*",
         "frugue/core": "*",

@@ -281,6 +281,8 @@ return [
         'TemplateMonster_SocialSharing' => 1,
         'TemplateMonster_LayoutSwitcher' => 1,
         'Vertex_Tax' => 1,
-        'WebShopApps_MatrixRate' => 1
+        'WebShopApps_MatrixRate' => 1,
+        'Magento_InventoryRequisitionList' => 0,
+        'Magento_InventoryAdvancedCheckout' => 0
     ]
 ];
